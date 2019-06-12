@@ -16,12 +16,7 @@ public class MemeForge extends AppCompatActivity {
         Log.d("Forge","Forge up");
 
         Bundle imageSent = getIntent().getExtras();
-        ImgVw = findViewById(R.id.MF_imageView);
-        if(imageSent != null){
-            int imageInt = getIntent().getIntExtra("image_clicked",0);
-            //int imageCovert = Integer.getInteger(imageInt);
-            ImgVw.setImageResource(imageInt);
-        }
+
 
     }
 

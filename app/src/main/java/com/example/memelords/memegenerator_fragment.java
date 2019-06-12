@@ -33,10 +33,11 @@ public class memegenerator_fragment extends Fragment {
         manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         staggeredRv.setLayoutManager(manager);
         List<row> lst = new ArrayList<>();
-        lst.add(new row(R.drawable.boys));
-        lst.add(new row(R.drawable.pika));
+        lst.add(new row(R.drawable.surprisedpika));
+        lst.add(new row(R.drawable.tuxwinne));
         lst.add(new row(R.drawable.drake));
         lst.add(new row(R.drawable.buttons));
+        lst.add(new row(R.drawable.changemymind));
         adapter = new StaggeredRecyclerAdapter(view.getContext(),lst);
         staggeredRv.setAdapter(adapter);
     }
