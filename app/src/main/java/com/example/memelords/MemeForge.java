@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 public class MemeForge extends AppCompatActivity {
     private Pika_Fragment pika_fragment;
+    private Winnie_fragment winnie_fragment;
     ImageView ImgVw;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +26,11 @@ public class MemeForge extends AppCompatActivity {
                         .replace(R.id.meme_forge_frame,pika_fragment)
                         .commit();
                 break;
+            case 2131165313:
+                winnie_fragment = new Winnie_fragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.meme_forge_frame,winnie_fragment)
+                        .commit();
     }
     }
 

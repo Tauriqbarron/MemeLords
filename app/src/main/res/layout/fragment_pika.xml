@@ -108,9 +108,9 @@
 
     <TextView
         android:id="@+id/tvLine1_pika"
-        android:layout_width="371dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="366dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
         android:background="@null"
         android:textColor="#FD000000"
         android:textSize="24sp"
@@ -119,10 +119,10 @@
 
     <TextView
         android:id="@+id/tvLine2_pika"
-        android:layout_width="371dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="343dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="100dp"
         android:background="@null"
         android:textColor="#000000"
         android:textSize="18sp"
