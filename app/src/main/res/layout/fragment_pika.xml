@@ -30,7 +30,7 @@
             android:id="@+id/tvLine2_pika"
             android:layout_width="336dp"
             android:layout_height="52dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:background="@null"
             android:textColor="#000000"
@@ -63,6 +63,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/subjectTV_pika"
+            android:layout_width="114dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Subject"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvMe2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.397" />
+
+        <TextView
             android:id="@+id/tvMe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,18 +101,6 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/subjectTV_pika"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="76dp"
-        android:text="Subject"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et2_pika"

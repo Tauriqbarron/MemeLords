@@ -1,5 +1,6 @@
 package com.example.memelords;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.TextWatcher;
@@ -41,8 +43,8 @@ public class Pika_Fragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_pika,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.fragment_pika,container,false);
         line1 = (EditText) view.findViewById(R.id.et1_pika);
         line2 = (EditText) view.findViewById(R.id.et2_pika);
         line1Tv = (TextView) view.findViewById(R.id.tvLine1_pika);
@@ -52,6 +54,7 @@ public class Pika_Fragment extends Fragment {
         btnSave_pika = (Button) view.findViewById(R.id.btnsave_pika);
         context = view.getContext();
         cont = (ConstraintLayout)view.findViewById(R.id.con_pika);
+
         subject.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -102,12 +105,11 @@ public class Pika_Fragment extends Fragment {
         btnSave_pika.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File file =
+                File file = saveMeme(context,cont);
             }
         });
         return view;
     }
-
     private Bitmap getbitmap(View v){
         Bitmap memeBit = Bitmap.createBitmap(v.getWidth(),v.getHeight(),Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(memeBit);
