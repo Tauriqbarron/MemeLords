@@ -40,6 +40,7 @@ public class Pika_Fragment extends Fragment {
     Button btnSave_pika;
     Context context;
     ConstraintLayout cont;
+    DatabaseHelper mDatabaseHelper;
 
     @Nullable
     @Override
@@ -54,6 +55,7 @@ public class Pika_Fragment extends Fragment {
         btnSave_pika = (Button) view.findViewById(R.id.btnsave_pika);
         context = view.getContext();
         cont = (ConstraintLayout)view.findViewById(R.id.con_pika);
+        mDatabaseHelper = new DatabaseHelper(view.getContext());
 
         subject.addTextChangedListener(new TextWatcher() {
             @Override
@@ -162,4 +164,6 @@ public class Pika_Fragment extends Fragment {
             Log.i("TAG", "There was an issue scanning gallery.");
         }
     }
+
+    public void addData(String newMeme)
 }
