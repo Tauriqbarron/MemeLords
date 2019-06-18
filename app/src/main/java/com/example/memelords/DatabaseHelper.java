@@ -33,7 +33,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Col2,item);
-        contentValues.put(Col2,item);
 
         Log.d("DB:","addData: Adding " + item + "to "+ Table_Name);
 

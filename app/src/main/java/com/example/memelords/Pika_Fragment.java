@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,6 +42,7 @@ public class Pika_Fragment extends Fragment {
     Context context;
     ConstraintLayout cont;
     DatabaseHelper mDatabaseHelper;
+    String newMeme;
 
     @Nullable
     @Override
@@ -135,6 +137,7 @@ public class Pika_Fragment extends Fragment {
            return null;
        }
            String filename = pictureFileDir.getPath() +File.separator+ System.currentTimeMillis()+".jpg";
+            newMeme = filename;
            File pictureFile = new File(filename);
            Bitmap saveMap =getbitmap(v);
 
@@ -149,10 +152,9 @@ public class Pika_Fragment extends Fragment {
                Log.i("TAG", "There was an issue saving the image.");
            }
            scanGallery( context,pictureFile.getAbsolutePath());
-
+        addData(newMeme);
         return pictureFile;
     }
-
     private void scanGallery(Context context, String path){
         try {
             MediaScannerConnection.scanFile(context, new String[]{path}, null, new MediaScannerConnection.OnScanCompletedListener() {
@@ -164,6 +166,17 @@ public class Pika_Fragment extends Fragment {
             Log.i("TAG", "There was an issue scanning gallery.");
         }
     }
+    public void addData(String newMeme){
+        Boolean insert = mDatabaseHelper.addData(newMeme);
 
-    public void addData(String newMeme)
+        if(insert){
+            toast("Insert Successful");
+        }else{
+            toast("Something went wrong");
+        }
+    }
+
+    public void toast(String msg){
+        Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
+    }
 }
