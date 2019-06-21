@@ -38,6 +38,7 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<StaggeredRecy
             public void onClick(View v) {
                 Toast.makeText(mContext,"Clicked",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext,MemeForge.class);
+                int test = mdata.get(i).getImg();
                 intent.putExtra("image_clicked",mdata.get(i).getImg());
                 mContext.startActivity(intent);
             }
