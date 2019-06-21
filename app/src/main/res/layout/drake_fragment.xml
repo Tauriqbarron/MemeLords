@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/conlayout_drake"
         android:layout_width="402dp"
         android:layout_height="430dp"
         android:layout_marginStart="8dp"
@@ -19,10 +19,8 @@
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="394dp"
+            android:layout_height="326dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/drake" />
@@ -31,8 +29,8 @@
             android:id="@+id/drake_TV1"
             android:layout_width="154dp"
             android:layout_height="108dp"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="44dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,9 +39,19 @@
             android:id="@+id/drake_TV2"
             android:layout_width="153dp"
             android:layout_height="131dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="44dp"
             android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/drake_btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="324dp"
+            android:layout_marginEnd="28dp"
+            android:text="Save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
@@ -52,30 +60,32 @@
         android:id="@+id/drake_ET2"
         android:layout_width="391dp"
         android:layout_height="131dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter bottom frame text here"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="589dp" />
+        app:layout_constraintTop_toBottomOf="@+id/drake_ET1" />
 
     <EditText
         android:id="@+id/drake_ET1"
         android:layout_width="387dp"
         android:layout_height="109dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="368dp"
         android:ems="10"
         android:hint="Enter top frame text here"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="461dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="476dp"
         android:text="Bottom Frame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -84,8 +94,8 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="348dp"
         android:text="Top Frame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
