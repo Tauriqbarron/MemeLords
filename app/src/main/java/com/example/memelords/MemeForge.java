@@ -10,6 +10,7 @@ public class MemeForge extends AppCompatActivity {
     private Pika_Fragment pika_fragment;
     private Winnie_fragment winnie_fragment;
     private Drake_Fragment drake_fragment;
+    private Change_My_Mind_Fragment change_my_mind_fragment;
     ImageView ImgVw;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,12 @@ public class MemeForge extends AppCompatActivity {
                 drake_fragment = new Drake_Fragment();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.meme_forge_frame,drake_fragment)
+                        .commit();
+                break;
+            case 2131165279:
+                change_my_mind_fragment = new Change_My_Mind_Fragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.meme_forge_frame,change_my_mind_fragment)
                         .commit();
                 break;
     }
