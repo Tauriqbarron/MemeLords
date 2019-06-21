@@ -1,5 +1,8 @@
 package com.example.memelords;
 
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,11 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 public class profile_fragment extends Fragment {
     View view;
     private RecyclerView staggeredRv;
-    private StaggeredRecyclerAdapter adapter;
+    private StaggeredRecyclerAdapter_Profile adapter;
     private StaggeredGridLayoutManager manager;
+    private DatabaseHelper mDB;
     public profile_fragment() {
     }
 
@@ -22,7 +30,7 @@ public class profile_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.profile_fragment,container,false);
-
+        mDB = new DatabaseHelper(view.getContext());
         staggeredRvSetup();
         return view;
     }
@@ -32,8 +40,19 @@ public class profile_fragment extends Fragment {
         manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         staggeredRv.setLayoutManager(manager);
 
+        Cursor data = mDB.getData();
 
-
-
+        ArrayList<String> filePaths = new ArrayList<>();
+        List<row> row = new ArrayList<>();
+        while(data.moveToNext()){
+            filePaths.add(data.getString(1));
+            File imgFile = new File(data.getString(1));
+            if(imgFile.exists()){
+                Bitmap bitImg = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                row.add( new row(bitImg));
+            }
+        }
+        adapter = new StaggeredRecyclerAdapter_Profile(view.getContext(),row);
+        staggeredRv.setAdapter(adapter);
     }
 }
