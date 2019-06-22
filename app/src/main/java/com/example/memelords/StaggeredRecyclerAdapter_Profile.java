@@ -2,6 +2,7 @@ package com.example.memelords;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -15,8 +16,8 @@ import java.util.List;
 
 public class StaggeredRecyclerAdapter_Profile extends RecyclerView.Adapter<StaggeredRecyclerAdapter_Profile.ImageViewHolder>{
 
-    Context mContext;
-    List<row> mdata;
+   private Context mContext;
+   private List<row> mdata;
 
     public StaggeredRecyclerAdapter_Profile(Context mContext, List<row> mdata) {
         this.mContext = mContext;
@@ -29,8 +30,8 @@ public class StaggeredRecyclerAdapter_Profile extends RecyclerView.Adapter<Stagg
         return new ImageViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(@NonNull ImageViewHolder imageViewHolder, final int i) {
-        imageViewHolder.img.setImageResource(mdata.get(i).getImg());
+    public void onBindViewHolder(@NonNull ImageViewHolder imageViewHolder, int i) {
+        imageViewHolder.img.setImageBitmap(mdata.get(i).getImgBit());
     }
 
     @Override

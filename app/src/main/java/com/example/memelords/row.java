@@ -17,6 +17,9 @@ public class row {
     public int getImg() {
         return img;
     }
+    public Bitmap getImgBit(){
+        return imgBit;
+    }
 
     public void setImg(int img) {
         this.img = img;
